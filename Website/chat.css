@@ -1,0 +1,135 @@
+.chat {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+    z-index: 2;
+  }
+  
+  .chat-toggle {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+  }
+  
+  .chat.collapsed .chat-toggle {
+    transform: translateX(-100%);
+    right: 0;
+  }
+  
+  .chat.collapsed .chat-toggle i {
+    transform: rotate(0);
+  }
+  
+  .chat-toggle.collapsed {
+    right: 0;
+  }
+  
+  .chat-toggle.collapsed i {
+    transform: rotate(0);
+  }
+  
+  .chat.collapsed {
+    transform: translateX(300px);
+  }
+  
+  .chat.collapsed .chat-toggle {
+    right: 300px;
+  }
+  
+  .chat.collapsed {
+    transform: translateX(300px);
+  }
+  
+  .chat h3 {
+    margin-top: 0;
+  }
+  
+  .chat-messages {
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .message p {
+    margin: 0;
+  }
+  
+  .chat-form {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .chat-form input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .chat-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .chat-messages {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .chat-messages::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.chat-open {
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .chat-open .chat {
+    transform: translateX(0);
+    width: 300px;
+  }
+  
+  .chat-open .chat-toggle {
+    right: 300px;
+  }
+  
+  .chat-open .chat-toggle.collapsed {
+    right: 0;
+  }
+  
+  .chat-open .content {
+    transform: translateX(300px);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .chat-open .content.collapsed {
+    transform: translateX(0);
+  }
