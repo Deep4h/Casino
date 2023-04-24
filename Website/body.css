@@ -1,47 +1,77 @@
+:root {
+    --chat-width: 300px;
+  }
+  
+  .main-container {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: max-width 0.3s ease;
+  }
+  
+  .main-container.chat-open {
+    max-width: calc(100% - var(--chat-width));
+  }
+
 .container {
     margin-top: 50px;
-    padding: 0 200px;
+    align-items: center;
+    position: relative; 
+    justify-content: center;
+    display: flex;
 }
 
-.button, .money-button {
+.games-money-container {
+    display: flex;
+    flex-direction: column;
+}
+
+  .games-header,
+  .money-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    position: relative; 
+  }
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    grid-gap: 10px;
+    margin-top: 10px;
+    position: relative; 
+  }
+  
+  .button {
+    position: relative; 
     background-color: #008CBA;
     border: none;
     color: #fff;
-    padding: 40px 30px;
+    padding: 80px 60px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
+  }
 
-.button:hover, .money-button:hover {
+.button:hover {
     background-color: #3e8e41;
 }
 
 .users-online {
     font-size: 14px;
-    color: #666;
-    margin-top: 10px;
     text-align: right;
 }
 
-.games-container, .money-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-}
-
+/* Carousel CSS */
 .carousel-container {
     margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 200px;
 }
 
 .carousel {

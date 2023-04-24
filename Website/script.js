@@ -47,3 +47,7 @@ chatToggle.addEventListener('click', () => {
     chatToggle.innerHTML = '<i class="fa fa-chevron-right"></i>';
   }
 });
+
+document.querySelector('.chat-toggle').addEventListener('click', function() {
+  document.querySelector('.main-container').classList.toggle('chat-open');
+});
