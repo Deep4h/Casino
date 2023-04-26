@@ -1,6 +1,8 @@
 // Get the username and number of users online from the server
-var username = "John";
+var username = "Mark";
 var usersOnline = 10;
+
+document.getElementById("header-username").innerHTML = username;
 
 // Update the text of the welcome back button and the users online count
 document.getElementById("username").innerHTML = username;
@@ -51,3 +53,4 @@ chatToggle.addEventListener('click', () => {
 document.querySelector('.chat-toggle').addEventListener('click', function() {
   document.querySelector('.main-container').classList.toggle('chat-open');
 });
+

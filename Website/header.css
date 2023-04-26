@@ -1,30 +1,37 @@
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    font-size: 20px;
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-}
-.header-button {
-    background-color: #4CAF50;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+  
+  .header-left {
+    display: flex;
+  }
+  
+  .header-button {
+    background-color: transparent;
     border: none;
     color: #fff;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    grid-column: 2;
+    margin-right: 20px;
     position: relative;
-}
-
-.header-button ul {
+  }
+  
+  .header-button:hover {
+    text-decoration: underline;
+  }
+  
+  .header-button ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -36,41 +43,88 @@ header {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     display: none;
-}
-.header-button:hover ul {
+  }
+  
+  .header-button:hover ul {
     display: block;
-}
-
-.header-button ul li {
+  }
+  
+  .header-button ul li {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     cursor: pointer;
     color: #333;
-}
-
-.header-button ul li:hover {
+  }
+  
+  .header-button ul li:hover {
     background-color: #f2f2f2;
-}
-.header-button:hover {
-    background-color: #3e8e41;
-}
-
-.balance-value {
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .balance-value {
+    font-size: 16px;
+    margin-right: 20px;
     background-color: #fff;
     color: #000;
     padding: 5px 10px;
     border-radius: 5px;
     position: relative;
     z-index: 1;
+  }
+  
+  .dropdown {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  .dropdown-button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-content a {
+    color: #000000;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .notification-container {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
 }
 
-.dropdown {
-position: relative;
-display: inline-block;
-}
-
-.dropdown-button {
+.notification-button {
 background-color: #fff;
 color: #333;
 border: none;
@@ -80,57 +134,15 @@ font-size: 16px;
 cursor: pointer;
 }
 
-.dropdown-content {
+.notification-box {
 display: none;
 position: absolute;
+top: 100%;
+right: 0;
 z-index: 1;
 background-color: #f9f9f9;
-min-width: 100px;
 border-radius: 5px;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-color: #000000;
-padding: 10px;
-text-decoration: none;
-display: block;
-}
-
-.dropdown-content a:hover {
-background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-.notification-container {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    margin-left: 10px;
-  }
-  
-  .notification-button {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-.notification-box {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 1;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .notification-list {
@@ -195,4 +207,3 @@ background-color: #ddd;
 .user-container:hover .user-dropdown {
 display: block;
 }
-  
