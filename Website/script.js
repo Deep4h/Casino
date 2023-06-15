@@ -54,3 +54,46 @@ document.querySelector('.chat-toggle').addEventListener('click', function() {
   document.querySelector('.main-container').classList.toggle('chat-open');
 });
 
+const menuLink = document.getElementById('menu-link');
+const menuPopup = document.getElementById('menu-popup');
+const profilePage = document.getElementById('profile-page');
+const aboutPage = document.getElementById('about-page');
+const servicesPage = document.getElementById('services-page');
+const contactPage = document.getElementById('contact-page');
+
+menuLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  menuPopup.style.display = 'block';
+  profilePage.style.display = 'block';
+});
+
+menuPopup.addEventListener('click', (event) => {
+  if (event.target === menuPopup) {
+    menuPopup.style.display = 'none';
+  }
+});
+
+const pages = {
+  'profile': profilePage,
+  'about': aboutPage,
+  'services': servicesPage,
+  'contact': contactPage
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuLinks = document.querySelectorAll('.menu-sidebar a');
+  menuLinks[0].click();
+  menuLinks.forEach((link, index) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const page = link.getAttribute('data-page');
+      const currentPage = pages[page];
+      const iframes = document.querySelectorAll('.menu-iframe-container iframe');
+      iframes.forEach((iframe) => {
+        iframe.style.display = 'none';
+      });
+      currentPage.style.display = 'block';
+    });
+  });
+});
+

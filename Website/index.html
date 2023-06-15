@@ -59,12 +59,27 @@
 
           <!-- User container -->
           <div class="user-container">
-              <button class="user-button"><span id="header-username"></span>▼</button>
-              <div class="user-dropdown">
-                <a href="#">Profile</a>
-                <a href="#">Settings</a>
-                <a href="#">Logout</a>
+              <button class="user-button" id="menu-link"><span id="header-username"></span></button>
+          </div>
+
+
+          <div id="menu-popup">
+            <div class="menu-popup-content">
+              <div class="menu-sidebar">
+                <ul>
+                  <li><a href="#" data-page="profile">Profile</a></li>
+                  <li><a href="#" data-page="about">About</a></li>
+                  <li><a href="#" data-page="services">Services</a></li>
+                  <li><a href="#" data-page="contact">Contact</a></li>
+                </ul>
               </div>
+              <div class="menu-iframe-container">
+                <iframe id="profile-page" src="profile/profile.html" frameborder="0"></iframe>
+                <iframe id="about-page" src="about.html" frameborder="0"></iframe>
+                <iframe id="services-page" src="services.html" frameborder="0"></iframe>
+                <iframe id="contact-page" src="contact.html" frameborder="0"></iframe>
+              </div>
+            </div>
           </div>
         </div> 
       </div>

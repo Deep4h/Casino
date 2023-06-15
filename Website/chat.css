@@ -24,7 +24,6 @@
     box-sizing: border-box;
     transition: transform 0.3s ease-in-out;
     transform: translateX(0);
-    z-index: 2;
   }
   
   .chat-toggle {

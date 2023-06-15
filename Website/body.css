@@ -207,3 +207,71 @@
 .carousel-control-next {
     right: 20px;
 }
+
+#menu-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  
+  .menu-popup-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .menu-sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .menu-sidebar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .menu-sidebar a:hover {
+    text-decoration: underline;
+  }
+  
+  .menu-iframe-container {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .menu-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+  }
