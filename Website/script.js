@@ -60,11 +60,14 @@ const profilePage = document.getElementById('profile-page');
 const aboutPage = document.getElementById('about-page');
 const servicesPage = document.getElementById('services-page');
 const contactPage = document.getElementById('contact-page');
+const depositPage = document.getElementById('deposit-page');
+const withdrawPage = document.getElementById('withdraw-page');
 
 menuLink.addEventListener('click', (event) => {
   event.preventDefault();
   menuPopup.style.display = 'block';
   profilePage.style.display = 'block';
+  depositPage.style.display = 'block';
 });
 
 menuPopup.addEventListener('click', (event) => {
@@ -77,7 +80,9 @@ const pages = {
   'profile': profilePage,
   'about': aboutPage,
   'services': servicesPage,
-  'contact': contactPage
+  'contact': contactPage,
+  'deposit': depositPage,
+  'withdraw': withdrawPage
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -96,4 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
 

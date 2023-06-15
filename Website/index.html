@@ -35,14 +35,22 @@
         <div class="header-right">
             <!-- Balance value -->
           <span class="balance-value">$0.00</span>
-
-          <!-- Dropdown -->
-          <div class="dropdown">
-              <button class="dropdown-button">+</button>
-              <div class="dropdown-content">
-                <a href="#">Deposit</a>
-                <a href="#">Withdraw</a>
+          <div>
+              <button id="menu-link">+</button>
+          </div>
+          <div id="menu-popup">
+            <div class="menu-popup-content">
+              <div class="menu-sidebar">
+                <ul>
+                  <li><a href="#" data-page="deposit">Deposit</a></li>
+                  <li><a href="#" data-page="withdraw">Withdraw</a></li>
+                </ul>
               </div>
+              <div class="menu-iframe-container">
+                <iframe id="deposit-page" src="deposit.html" frameborder="0"></iframe>
+                <iframe id="withdraw-page" src="withdraw.html" frameborder="0"></iframe>
+              </div>
+            </div>
           </div>
 
           <!-- Notification container -->
