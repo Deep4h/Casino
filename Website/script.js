@@ -56,6 +56,8 @@ document.querySelector('.chat-toggle').addEventListener('click', function() {
 
 const menuLink = document.getElementById('menu-link');
 const menuPopup = document.getElementById('menu-popup');
+const moneyLink = document.getElementById('money-link');
+const moneyPopup = document.getElementById('money-popup');
 const profilePage = document.getElementById('profile-page');
 const aboutPage = document.getElementById('about-page');
 const servicesPage = document.getElementById('services-page');
@@ -67,12 +69,24 @@ menuLink.addEventListener('click', (event) => {
   event.preventDefault();
   menuPopup.style.display = 'block';
   profilePage.style.display = 'block';
+  depositPage.style.display = 'none';
+});
+
+moneyLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  moneyPopup.style.display = 'block';
+  profilePage.style.display = 'none';
   depositPage.style.display = 'block';
 });
 
 menuPopup.addEventListener('click', (event) => {
   if (event.target === menuPopup) {
     menuPopup.style.display = 'none';
+  }
+});
+moneyPopup.addEventListener('click', (event) => {
+  if (event.target === moneyPopup) {
+    moneyPopup.style.display = 'none';
   }
 });
 
@@ -98,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         iframe.style.display = 'none';
       });
       currentPage.style.display = 'block';
+      
     });
   });
 });

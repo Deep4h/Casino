@@ -208,7 +208,7 @@
     right: 20px;
 }
 
-#menu-popup {
+#menu-popup, #money-popup {
     display: none;
     position: fixed;
     top: 0;
@@ -227,21 +227,25 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 50%;
+    height: 75%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
   }
   
   .menu-sidebar {
+    display: grid;
     width: 200px;
+    height: 100%;
     background-color: #333;
     color: #fff;
-    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: right;
+    align-content: center;
   }
   
   .menu-sidebar ul {
@@ -256,11 +260,8 @@
   
   .menu-sidebar a {
     color: #fff;
+    font-size: 28px;
     text-decoration: none;
-  }
-  
-  .menu-sidebar a:hover {
-    text-decoration: underline;
   }
   
   .menu-iframe-container {

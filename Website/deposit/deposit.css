@@ -1,0 +1,91 @@
+::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffff;
+  overflow: auto;
+}
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    position: relative; 
+    background-color: #008CBA;
+    border: none;
+    color: #fff;
+    padding: 60px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.cash-giftcard-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cash-button, .giftcard-button{
+  position: relative; 
+  background-color: #008CBA;
+  border: none;
+  color: #fff;
+  padding: 40px 60px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cash-button:hover, .giftcard-button:hover {
+background-color: #3e8e41;
+}
+
+.crypto-container {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.crypto-button{
+  position: relative; 
+  background-color: #008CBA;
+  border: none;
+  color: #fff;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.crypto-button:hover {
+background-color: #3e8e41;
+}
+
