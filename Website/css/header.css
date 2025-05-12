@@ -1,0 +1,126 @@
+@import url('variables.css');
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 220px;
+    background-color: var(--background-color);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1100;
+}
+  
+.header-left, .header-right{
+  display: flex;
+}
+
+.header-logo {
+    position: absolute; /* Allow the logo to break out of the header */
+    top: -1px; /* Adjust the vertical position */
+    left: 10px; /* Adjust the horizontal position */
+    height: 100px; /* Set a fixed height for the logo */
+    width: auto; /* Maintain the aspect ratio */
+    z-index: 2; /* Ensure the logo is above the header */
+    pointer-events: none; /* Optional: Prevent the logo from blocking clicks */
+}
+
+.header-button {
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color: #b1b1b1;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 20px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.header-button:hover {
+  color: var(--button-hover-txt);
+}
+
+.dropdown {
+    position: relative;
+    display: flex;
+}
+
+.dropdown-menu {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    
+}
+
+.dropdown-hover:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown .dropdown-menu[v-show="true"] {
+    display: block;
+}
+
+.coin-wallet-container {
+    display: flex;
+    align-items: center; /* Vertically align the elements */
+    background-color: var(--background-color); /* Background color for the container */
+    padding: 5px 10px; /* Add some padding */
+    gap: 5px; /* Add spacing between the elements */
+}
+
+.coin-value {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    color: var(--text-color); /* Text color */
+    padding-left: 20px;
+    padding-right: 10px; /* Add some padding to the right */
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 20px 0 0 20px; /* Rounded corners for the left side */
+    background-color: #000000; /* Optional: Background color for the coin value */
+}
+
+.coin-button {
+    border-radius: 20px; /* Rounded corners for the right side */
+    padding: 10px 10px; /* Match the padding of the coin value */
+    background-color: var(--secondary-color); /* Background color for the dropdown button */
+    color: var(--text-color); /* Text color */
+    border: none; /* Remove default border */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    margin-left: -13px; /* Negative margin to overlap the coin value */
+    z-index: 1; /* Ensure the button is above the coin value */
+}
+
+.coin-button:hover {
+    background-color: var(--button-hover-bg); /* Change background color on hover */
+}
+
+.user-button {
+background-color: #fff;
+color: #333;
+border: none;
+border-radius: 5px;
+padding: 5px 10px;
+font-size: 16px;
+cursor: pointer;
+}

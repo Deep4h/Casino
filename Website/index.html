@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap" rel="stylesheet">
     <!-- Link to the scripts -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- Meta viewport tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="main-container chat-open">
+  <div id="main-app" class="main-container chat-open"> 
     <header>
       <div class="header-container">
         <div class="header-left">
@@ -30,7 +31,8 @@
           </button>
           <button class="header-button">Challenges</button>
           <button class="header-button">Leaderboard</button>
-          <button class="header-button">Help</button>    
+          <button class="header-button">Help</button>
+          <popup :text="test"></popup>    
         </div>
         <div class="header-right">
             <!-- Balance value -->
@@ -53,39 +55,26 @@
             </div>
           </div>
 
-          <!-- Notification container -->
-          <div class="notification-container">
-              <button class="notification-button"><i class="fas fa-bell"></i></button>
-              <div class="notification-box">
-                <ul class="notification-list">
-                  <li>Notification 1</li>
-                  <li>Notification 2</li>
-                  <li>Notification 3</li>
-                </ul>
-              </div>
-          </div>
+          <!-- Notifications -->
+          <notification-dropdown :notifications="notifications"></notification-dropdown>
 
           <!-- User container -->
           <div class="user-container">
-              <button class="user-button" id="menu-link"><span id="header-username"></span></button>
+              <button class="user-button" id="menu-link" @click="openPopup"><span id="header-username"></span></button>
           </div>
           <div id="menu-popup">
-            <div class="menu-popup-content">
-              <div class="menu-sidebar">
-                <ul>
-                  <li><a href="#" data-page="profile">Profile</a></li>
-                  <li><a href="#" data-page="about">About</a></li>
-                  <li><a href="#" data-page="services">Services</a></li>
-                  <li><a href="#" data-page="contact">Contact</a></li>
-                </ul>
-              </div>
-              <div class="menu-iframe-container">
-                <iframe id="profile-page" src="profile/profile.html" frameborder="0"></iframe>
-                <iframe id="about-page" src="about.html" frameborder="0"></iframe>
-                <iframe id="services-page" src="services.html" frameborder="0"></iframe>
-                <iframe id="contact-page" src="contact.html" frameborder="0"></iframe>
-              </div>
-            </div>
+            <popup-component
+              :menu-items="[
+                { label: 'Deposit', page: 'deposit' },
+                { label: 'Withdraw', page: 'withdraw' }
+              ]"
+              :iframes="[
+                { id: 'deposit-page', src: 'deposit/deposit.html', page: 'deposit' },
+                { id: 'withdraw-page', src: 'withdraw.html', page: 'withdraw' }
+              ]"
+              :visible="popupVisible"
+              @close="closePopup"
+            ></popup-component>
           </div>
         </div> 
       </div>
@@ -170,33 +159,26 @@
   </footer>
   </div>
  <!-- Chat -->
- <div class = "chat-container">
-  <div class="chat">
-    <button class="chat-toggle"><i class="fa fa-chevron-left"></i></button>
-    <h3>Chat</h3>
-    <div class="chat-messages">
-      <div class="message">
-        <p>User 1: Hello!</p>
+ <div id="chat-app" class="chat-container" :class="{ open: chatOpen }">
+  <div class="chat" :class="{ collapsed: isCollapsed }">
+      <button class="chat-toggle" @click="toggleChat">
+        <i :class="isCollapsed ? 'fa fa-chevron-right' : 'fa fa-chevron-left'"></i>
+      </button>
+      <h3>Chat</h3>
+      <div class="chat-messages">
+          <div v-for="(message, index) in messages" :key="index" class="message">
+              <p><strong>{{ message.sender }}:</strong> {{ message.text }}</p>
+          </div>
       </div>
-      <div class="message">
-        <p>User 2: Hi there!</p>
-      </div>
-      <div class="message">
-        <p>User 1: How are you?</p>
-      </div>
-      <div class="message">
-        <p>User 2: I'm good, thanks for asking. How about you?</p>
-      </div>
-    </div>
-    <form class="chat-form">
-      <input type="text" placeholder="Type your message...">
-      <button type="submit">Send</button>
-    </form>
+      <form class="chat-form" @submit.prevent="sendMessage">
+          <input type="text" v-model="newMessage" placeholder="Type your message..." />
+          <button type="submit">Send</button>
+      </form>
   </div>
- </div>
     
 
  <!-- Script -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/vue-apps.js"></script>
 </body>
 </html>

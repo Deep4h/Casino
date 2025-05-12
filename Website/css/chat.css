@@ -1,25 +1,30 @@
+@import url('variables.css');
+
 .chat-container {
-  position: fixed;
-  bottom: 0;
-  right: -300px;
-  width: 300px;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  z-index: 9999;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0px; /* Default width when closed */
+    transition: width 0.3s ease;
+    background-color: #000000;
+    
+}
+.chat-container.open {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    transition: width 0.3s ease;
 }
 
-.chat-container.open {
-  right: 0;
+.chat-container.collapsed {
+    width: 0px; /* Width when collapsed */
 }
 .chat {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
     height: 100%;
-    background-color: #fff;
+    background-color: #000000;
     padding: 20px;
     box-sizing: border-box;
     transition: transform 0.3s ease-in-out;

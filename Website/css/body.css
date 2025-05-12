@@ -1,0 +1,209 @@
+@import url('variables.css');
+
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+    background-color: transparent;
+  }
+
+  body {
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../background.png);
+    background-size: cover; /* Scale the image to cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Gray overlay with 50% opacity */
+    z-index: -1; /* Place the overlay behind the body content */
+}
+
+  .main-container {
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    transition: margin-right 0.3s ease;
+    margin-right: 0px; /* Default margin for chat */
+  }
+
+  .main-container.with-chat {
+    margin-right: 300px; /* Reduced margin when chat is collapsed */
+  }
+
+  .content-wrapper {
+    max-width: 1000px; /* Set the maximum width of the content */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 0 20px;
+    padding-top: 80px; /* Add some padding on the sides for spacing */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+  .content-wrapper.with-chat {
+    max-width: 700px /* Reduced margin when chat is collapsed */
+  }
+  .welcome-users-container {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    justify-content: space-between; /* Push items to opposite sides */
+    align-items: center; /* Vertically align items */
+    padding-bottom: 30px;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .users-online{
+    font-size: 1rem;
+  }
+
+  @keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  }
+
+  .carousel {
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden; /* Hide content that overflows the container */
+    width: 100%; /* Full width of the parent container */
+    background-color: #f9f9f9; /* Optional: Background color */
+    border-radius: 5px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+    /*aspect-ratio: 2 / 1;  Maintain a 2:1 aspect ratio (800x400) */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Each slide takes up 100% of the container width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%; /* Make the image responsive to the carousel width */
+    height: 100%; /* Make the image fill the carousel height */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-radius: 2px; /* Optional: Rounded corners */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 50%; /* Optional: Circular buttons */
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.live-wins-carousel {
+    overflow: hidden; /* Hide items that slide out of the container */
+    width: 100%; /* Full width of the container */
+    height: 100px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #f9f9f9; /* Optional: Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}
+
+.live-wins-container {
+    display: flex;
+    position: relative;
+    width: 100%; /* Ensure the container spans the full width */
+    height: 100%; /* Match the height of the items */
+    transition: transform 0.5s ease-in-out;  /*Smooth slide transition */
+}
+.live-win-item {
+    position: relative; /* Use relative positioning to allow natural spacing */
+    flex: 0 0 calc(100% / 9); /* Divide the width equally among 7 items */
+    height: 100%; /* Match the height of the container */
+    background-color: #fff;
+    padding: 10px;
+    margin: 0; /* Remove margins to avoid spacing issues */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container {
+    margin-top: 50px;
+    align-items: center;
+    position: relative; 
+    justify-content: center;
+    display: flex;
+}
+
+.games-money-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.games-header,
+  .money-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    display: block;
+    position: relative; 
+  }
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    grid-gap: 10px;
+    margin-top: 10px;
+    position: relative; 
+  }
+  .button {
+    position: relative; 
+    background-color: var(--button-bg);
+    border: none;
+    color: #fff;
+    padding: 80px 60px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+.button:hover {
+    background-color: var(--button-hover-bg);
+}

@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>EveRust.land</title>
+        <!-- Link to the stylesheets -->
+        <link rel="stylesheet" type="text/css" href="css/body.css">
+        <link rel="stylesheet" type="text/css" href="css/header.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/chat.css">
+        <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap" rel="stylesheet">
+        <!-- Link to the scripts -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+        <!-- Meta viewport tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="main-app">
+            <div class="main-container" >
+                <header-component></header-component>
+                <div class="content-wrapper" :class="{'with-chat': chatOpen}">
+                    <div class="welcome-users-container">
+                        <div class="welcome-message">Welcome back, User<span id="username"></span></div>
+                        <div class="users-online"><i class="fa-solid fa-user"></i> 0 hikers online <span id="users-online"></span></div>
+                    </div>
+
+                    <live-wins-carousel></live-wins-carousel>
+
+                    <news-carousel></news-carousel>
+
+                    <!-- Games and Money Buttons -->
+                    <div class="container">
+                        <div class="games-money-container">
+                        <div class="games-header">Our Games</div>
+                            <div class="games-container">
+                                <div class="button-container">
+                                    <button class="button">Button 1</button>
+                                    <button class="button">Button 2</button>
+                                    <button class="button">Button 3</button>
+                                    <button class="button">Button 4</button>
+                                    <button class="button">Button 5</button>
+                                    <button class="button">Button 6</button>
+                                </div>
+                            </div>
+                        <div class="money-header">Get Free Money</div>
+                        <div class="money-container">
+                            <div class="button-container">
+                                    <button class="button">Button 1</button>
+                                    <button class="button">Button 2</button>
+                                    <button class="button">Button 3</button>
+                                    <button class="button">Button 4</button>
+                                    <button class="button">Button 5</button>
+                                    <button class="button">Button 6</button>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <footer-component></footer-component>
+                <chat-component @resize-content="handleResize"></chat-component>
+            <script type="module"src="./js/main.js"></script>
+        </div>
+        
+    </body>

@@ -33,22 +33,9 @@ balanceValue.textContent = '$' + balance.toFixed(2);
 const notificationButton = document.querySelector('.notification-button');
 const notificationBox = document.querySelector('.notification-box');
 
-notificationButton.addEventListener('click', () => {
-  notificationBox.classList.toggle('show');
-});
-
-const chatToggle = document.querySelector('.chat-toggle');
-const chat = document.querySelector('.chat');
-
-chatToggle.addEventListener('click', () => {
-  chat.classList.toggle('collapsed');
-  chatToggle.classList.toggle('collapsed');
-  if (chat.classList.contains('collapsed')) {
-    chatToggle.innerHTML = '<i class="fa fa-chevron-left"></i>';
-  } else {
-    chatToggle.innerHTML = '<i class="fa fa-chevron-right"></i>';
-  }
-});
+// notificationButton.addEventListener('click', () => {
+//   notificationBox.classList.toggle('show');
+// });
 
 document.querySelector('.chat-toggle').addEventListener('click', function() {
   document.querySelector('.main-container').classList.toggle('chat-open');

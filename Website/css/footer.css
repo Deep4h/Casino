@@ -1,5 +1,7 @@
+@import url('variables.css');
+
 footer {
-    background-color: #333;
+    background-color: var(--background-color);
     color: #fff;
     padding: 20px;
     display: flex;

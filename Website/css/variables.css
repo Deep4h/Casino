@@ -1,0 +1,13 @@
+:root {
+    /* Primary Colors */
+    --primary-color: #DC2011; /* Coral Red */
+    --secondary-color: #4CAF50; /* Green */
+    --background-color: #0e110e; /* Dark Navy */
+    --text-color: #F2F2F2; /* White */
+    --border-color: #44475A; /* Muted Gray */
+
+    --button-bg: #DC2011; /* Darker Blue */
+    --button-hover-bg: #380F17; /* Blue */
+    --button-text: #DC2011; /* Darker Blue */
+    --button-hover-txt: #DC2011; /* Blue */
+}
