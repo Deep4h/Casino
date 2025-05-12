@@ -17,8 +17,8 @@ export default {
         return {
             newsImages: [
                 { src: 'https://placehold.co/1000x300/000000/00FFFF.png', alt: 'News 1' },
-                { src: 'https://placehold.co/1000x200/000000/FF00FF.png', alt: 'News 2' },
-                { src: 'https://placehold.co/1000x200/000000/FFFF00.png', alt: 'News 3' }
+                { src: 'https://placehold.co/1000x300/000000/FF00FF.png', alt: 'News 2' },
+                { src: 'https://placehold.co/1000x300/000000/FFFF00.png', alt: 'News 3' }
             ]
         };
     }

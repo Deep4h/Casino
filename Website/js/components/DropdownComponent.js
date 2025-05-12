@@ -36,7 +36,7 @@ export default {
         </button>
         <ul class="dropdown-menu" v-show="isOpen">
             <li v-for="(item, index) in items" :key="index">
-                <a href="#" @click="handleClick(item)">{{ item.label }}</a>
+                <a href="#" @click="handleClick(item)"><i :class="[item.imgClass]"></i> {{ item.label }}</a>
             </li>
         </ul>
     </div>

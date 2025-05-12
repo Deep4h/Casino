@@ -8,6 +8,7 @@
     width: 0px; /* Default width when closed */
     transition: width 0.3s ease;
     background-color: #000000;
+    box-shadow: inset;
     
 }
 .chat-container.open {

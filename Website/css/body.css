@@ -11,7 +11,7 @@
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(../background.png);
+    background-image: url(../assets/background.png);
     background-size: cover; /* Scale the image to cover the entire container */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -39,10 +39,6 @@
     margin-right: 0px; /* Default margin for chat */
   }
 
-  .main-container.with-chat {
-    margin-right: 300px; /* Reduced margin when chat is collapsed */
-  }
-
   .content-wrapper {
     max-width: 1000px; /* Set the maximum width of the content */
     margin: 0 auto; /* Center the content horizontally */
@@ -50,9 +46,7 @@
     padding-top: 80px; /* Add some padding on the sides for spacing */
     box-sizing: border-box; /* Ensure padding is included in the width */
   }
-  .content-wrapper.with-chat {
-    max-width: 700px /* Reduced margin when chat is collapsed */
-  }
+
   .welcome-users-container {
     display: flex; /* Use Flexbox for horizontal alignment */
     justify-content: space-between; /* Push items to opposite sides */
@@ -207,3 +201,4 @@
 .button:hover {
     background-color: var(--button-hover-bg);
 }
+

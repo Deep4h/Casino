@@ -8,7 +8,7 @@ export default {
         <header>
             <div class="header-container">
                 <div class="header-left">
-                    <img src="logo.png" alt="Logo" class="header-logo">
+                    <img src="assets/logo.png" alt="Logo" class="header-logo">
                     <dropdown-component
                         label="GAMES"
                         :items="gamesDropdownItems"
@@ -38,9 +38,16 @@ export default {
                 </div>
             </div>
         </header>
+        <div class="popupContainer" id="popupContainer" :class="{ 'frame-open': frameOpen }">
+            <div class="popupContent">
+                <iframe :src=[iframesrc] frameborder="0"></iframe>
+            </div>
+        </div>
     `,
     data() {
         return {
+            iframesrc: "",
+            frameOpen: false,
             gamesDropdownItems: [
                 { label: 'Option 1', action: () => alert('Option 1 clicked') },
                 { label: 'Option 2', action: () => alert('Option 2 clicked') },
@@ -48,8 +55,8 @@ export default {
                 { label: 'TESTETSTETSTETSTETSTWT', action: () => alert('Option 1 clicked') },
             ],
             coinDropdownItems: [
-                { label: 'Deposit', action: () => alert('Option 1 clicked') },
-                { label: 'Withdraw', action: () => alert('Option 2 clicked') },
+                { label: 'Deposit', imgClass: "fa-solid fa-circle-plus", action: () => {this.iframesrc="deposit/deposit.html"; this.frameOpen = true }},
+                { label: 'Withdraw', imgClass: "fa-solid fa-circle-minus", action: () => alert('Option 2 clicked') },
             ],
             userDropdownItems: [
                 { label: 'Account', action: () => alert('Option 1 clicked') },
