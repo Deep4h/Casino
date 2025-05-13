@@ -10,4 +10,10 @@
     --button-hover-bg: #380F17; /* Blue */
     --button-text: #DC2011; /* Darker Blue */
     --button-hover-txt: #DC2011; /* Blue */
+
+    --z-index-back: -6;
+    --z-index-middle-back: -3;
+    --z-index-middle: 1;
+    --z-index-middle-front: 3;
+    --z-index-front: 6;
 }

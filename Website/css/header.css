@@ -3,11 +3,16 @@
 .header-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 10px 10px 220px;
     background-color: var(--background-color);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1100;
+    position: fixed;
+    width: 100%; /* Ensure the header spans the full width */
+    height: 65px; /* Set a fixed height */
+    box-sizing: border-box;
+    z-index: var(--z-index-middle-front);
+    pointer-events: auto;
 }
   
 .header-left, .header-right{
@@ -20,7 +25,6 @@
     left: 10px; /* Adjust the horizontal position */
     height: 100px; /* Set a fixed height for the logo */
     width: auto; /* Maintain the aspect ratio */
-    z-index: 2; /* Ensure the logo is above the header */
     pointer-events: none; /* Optional: Prevent the logo from blocking clicks */
 }
 
@@ -55,7 +59,7 @@
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1000;
+    z-index: var(--z-index-middle);
     
 }
 
@@ -108,7 +112,6 @@
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth hover effect */
     margin-left: -13px; /* Negative margin to overlap the coin value */
-    z-index: 1; /* Ensure the button is above the coin value */
 }
 
 .coin-button:hover {
@@ -126,28 +129,51 @@ cursor: pointer;
 }
 
 .popupContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* ensure it's above other content */
-  display: none; /* initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: var(--z-index-middle); /* Ensure it appears above other elements */
+    visibility: hidden; /* Hide by default */
+    opacity: 0; /* Fully transparent by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
 }
 
-.frame-open{
-  display: block; /* initially hidden */
+.popupOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: var(--z-index-middle-back); /* Ensure it is below the popup content but above the page */
+    cursor: pointer; /* Indicate that it is clickable */
+}
+
+.popupContainer.frame-open {
+    visibility: visible; /* Show when frameOpen is true */
+    opacity: 1; /* Fully visible */
 }
 
 .popupContent {
-  position: relative;
+    position: relative;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Optional: Set a maximum width */
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    background-color: var(--background-color); /* Optional: Background for the iframe container */
+    border-radius: 8px; /* Optional: Rounded corners */
+    overflow: hidden; /* Hide any overflow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
 }
 
-iframe {
-  width: 100%;
-  height: 300px; /* adjust height as needed */
-  border: none;
+.popupContent iframe {
+    width: 100%; /* Make the iframe fill the container */
+    height: 100%; /* Make the iframe fill the container */
+    border: none; /* Remove the default border */
+    overflow: auto; /* Allow scrolling inside the iframe */
 }

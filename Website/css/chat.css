@@ -3,7 +3,7 @@
 .chat-container {
     position: fixed;
     right: 0;
-    top: 0;
+    top: 65px;
     bottom: 0;
     width: 0px; /* Default width when closed */
     transition: width 0.3s ease;
@@ -14,7 +14,6 @@
 .chat-container.open {
     position: fixed;
     right: 0;
-    top: 0;
     bottom: 0;
     width: 300px;
     transition: width 0.3s ease;
@@ -24,7 +23,6 @@
     width: 0px; /* Width when collapsed */
 }
 .chat {
-    height: 100%;
     background-color: #000000;
     padding: 20px;
     box-sizing: border-box;
@@ -46,7 +44,7 @@
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    z-index: 2;
+    z-index: var(--z-index-middle-back);
   }
   
   .chat.collapsed .chat-toggle {

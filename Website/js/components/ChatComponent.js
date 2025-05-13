@@ -5,7 +5,6 @@ export default {
                 <button class="chat-toggle" @click="toggleChat">
                     <i :class="isCollapsed ? 'fa fa-chevron-right' : 'fa fa-chevron-left'"></i>
                 </button>
-                <h3>Chat</h3>
                 <div class="chat-messages" ref="chatMessages">
                     <div v-for="(message, index) in messages" :key="index" class="message">
                         <p><strong>{{ message.sender }}:</strong> {{ message.text }}</p>

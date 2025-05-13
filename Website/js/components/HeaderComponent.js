@@ -39,6 +39,7 @@ export default {
             </div>
         </header>
         <div class="popupContainer" id="popupContainer" :class="{ 'frame-open': frameOpen }">
+            <div class="popupOverlay" @click="closeIframe"></div>    
             <div class="popupContent">
                 <iframe :src=[iframesrc] frameborder="0"></iframe>
             </div>
@@ -63,5 +64,11 @@ export default {
                 { label: 'TESTETSTETSTETSTETSTWT', action: () => alert('Option 1 clicked') },
             ]
         };
+    },
+    methods: {
+        closeIframe() {
+            this.frameOpen = false; // Close the iframe
+            this.iframesrc = ""; // Clear the iframe source
+        }
     }
 };

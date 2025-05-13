@@ -15,9 +15,9 @@
     </head>
     <body>
         <div id="main-app">
-            <div class="main-container" >
+            <div class="main-container" :class="{'with-chat': chatOpen}">
                 <header-component></header-component>
-                <div class="content-wrapper" :class="{'with-chat': chatOpen}">
+                <div class="content-wrapper">
                     <div class="welcome-users-container">
                         <div class="welcome-message">Welcome back, User<span id="username"></span></div>
                         <div class="users-online"><i class="fa-solid fa-user"></i> 0 hikers online <span id="users-online"></span></div>

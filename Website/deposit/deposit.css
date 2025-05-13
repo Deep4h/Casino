@@ -1,12 +1,15 @@
+@import url('../css/variables.css');
+
 ::-webkit-scrollbar {
   width: 0px;
   background-color: transparent;
 }
 body {
-  margin: 0;
+  margin: 50px;
   padding: 0;
-  background-color: #ffff;
   overflow: auto;
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
 }
 .button-container {
     display: grid;
